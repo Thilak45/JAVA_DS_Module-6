@@ -1,73 +1,52 @@
-# Ex2 Count how many times a number appears in an array recursively.
-## DATE:08/08/2025
+# EX3 Write a program to count the number of digits in an integer.
+## DATE:13/08/2025
 ## AIM:
-To write a Java program to Count how many times a number appears in an array recursively.
+To write a  java program to count the number of digits in an integer.
 
 ## Algorithm
-1.Read the array size, array elements, and the target value.
-
-2.Call the recursive function countOccurrences(arr, n, target).
-
-3.If n becomes 0, return 0 (no elements left).
-
-4.Otherwise, check if the last element arr[n-1] equals the target.
-
-5.Return 1 + recursive call if it matches, else return just the recursive call.  
+1. Start and read an integer n from the user.
+2. Initialize a variable count = 0.
+3. If n == 0, set count = 1 (since 0 has 1 digit).
+4. Otherwise, repeat while n ≠ 0:
+  • Divide n by 10
+  • Increment count
+5. Display "Number of digits: " + count and stop.  
 
 ## Program:
 ```
 /*
-Program Count how many times a number appears in an array recursively.
-Developed by: VLLACHI TILAK
+Program to to count the number of digits in an integer
+Developed by: VELLACHI TILAK
 RegisterNumber: 212223240172
 
 import java.util.Scanner;
 
-public class CountOccurrences {
-
-   
-    public static int countOccurrences(int[] arr, int n, int target) {
-        if (n == 0) {
-            return 0;
-        } 
-        else {
-            if (arr[n - 1] == target) {
-                return 1 + countOccurrences(arr, n - 1, target);
-            } 
-            else {
-                return countOccurrences(arr, n - 1, target);
-            }
-        }
- }
-
+public class CountDigits {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int size = scanner.nextInt();
-
-        if (size <= 0) {
-            System.out.println("Invalid array size. Must be positive.");
-            return;
+        Scanner sc = new Scanner(System.in);
+        int n=sc.nextInt();
+        int count=0;
+        if(n==0){
+            count=1;
         }
-        int[] arr = new int[size];
-        for (int i = 0; i < size; i++) {
-            arr[i] = scanner.nextInt();
+        else{
+             while(n!=0){
+                 n=n/10;
+                 count++;
+             }
         }
-        int target = scanner.nextInt();
-        int count = countOccurrences(arr, size, target);
-        System.out.println("The number " + target + " appears " + count + " time(s) in the array.");
-
-        scanner.close();
+        System.out.println("Number of digits: " + count);
     }
 }
-  
+ 
 */
 ```
 
 ## Output:
-<img width="917" height="570" alt="image" src="https://github.com/user-attachments/assets/448f9349-febe-40f8-8cad-46ff1c0ed2d6" />
+<img width="964" height="339" alt="image" src="https://github.com/user-attachments/assets/401a26e4-d61d-4e28-953d-08239c4ece25" />
 
 
 
 
 ## Result:
-Thus, the Java program to Count how many times a number appears in an array recursively is implemented successfully.
+Thus, the Java program to to count the number of digits in an integer is implemented successfully.
